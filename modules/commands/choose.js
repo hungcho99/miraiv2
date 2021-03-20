@@ -19,7 +19,7 @@ module.exports.config = {
 
 module.exports.run = async ({ api, event, args }) => {
 	var input = args.join(" ").trim();
-	if (!input)return api.sendMessage(`Bạn không nhập đủ thông tin kìa :(`,threadID,messageID);
+	if (!input)return api.sendMessage(`Bạn không nhập đủ thông tin kìa :(`,event.threadID, event.messageID);
 	var array = input.split(" | ");
 	return api.sendMessage(`Hmmmm, em sẽ chọn giúp cho là: ` + array[Math.floor(Math.random() * array.length)] + `.`,event.threadID, event.messageID);
 }
