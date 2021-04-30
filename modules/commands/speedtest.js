@@ -25,7 +25,7 @@ module.exports.run = async function({ api, event }) {
 		const resault = await speedTest.getSpeed();
 		return api.sendMessage(
 			"=== Download ===" + 
-			"\n- Speed: " + resault + " Mbps",
+			"\n- Speed: " + Math.floor(resault) + " Mbps",
 			event.threadID, event.messageID
 		);
 	}
